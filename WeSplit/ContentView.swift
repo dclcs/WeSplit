@@ -10,23 +10,16 @@ import SwiftUI
 struct ContentView: View {
     // The View protocol has only one requirement, which is that you have a computed property called body that returns some View.
     var body: some View {
-        Form{
-            Section {
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
+        NavigationView {
+            Form{
+                Section {
+                    Text("Hello World!")
+                }
             }
-            
-            Section {
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
-                Text("Hello World!")
-            }
+            .navigationTitle("SwiftUI")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        
     }
 }
 
