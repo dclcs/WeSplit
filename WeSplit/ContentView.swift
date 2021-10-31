@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    // The View protocol has only one requirement, which is that you have a computed property called body that returns some View.
+    @State var tapCount = 0
+    // @State allows us to work around the limitation of structs: we know we can’t change their properties because structs are fixed, but @State allows that value to be stored separately by SwiftUI in a place that can be modified.
+    
+    
     var body: some View {
-        NavigationView {
-            Form{
-                Section {
-                    Text("Hello World!")
-                }
-            }
-            .navigationTitle("SwiftUI")
-            .navigationBarTitleDisplayMode(.inline)
+        Button("Tap Count : \(tapCount)") {
+            self.tapCount += 1
         }
         
     }
