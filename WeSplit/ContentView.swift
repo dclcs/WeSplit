@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var tapCount = 0
-    // @State allows us to work around the limitation of structs: we know we can’t change their properties because structs are fixed, but @State allows that value to be stored separately by SwiftUI in a place that can be modified.
-    
-    
+    @State private var name = ""
     var body: some View {
-        Button("Tap Count : \(tapCount)") {
-            self.tapCount += 1
+        Form {
+            TextField("Enter your name", text: $name)
+            Text("Your name is \(name)")
         }
-        
     }
 }
 
